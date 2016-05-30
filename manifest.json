@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  
+  "name" : "prantar.me changes",
+  "description" : "View the last date prantar.me was updated",
+  "version" : "0.1",
+  
+  "browser_action" : {
+	"popup" : "popup.html",
+	"default_icon" : "icon.png"
+  },
+  
+  "permissions" : ["notifications", "tabs"],
+  "author": "Prantar Bhowmik",
+  "homepage_url": "https://prantar.me",
+  "offline_enabled": true,
+  "permissions": ["tabs", "notifications"],
+  "short_name": "prantar.me",
+  "version_name": "0.1 beta"
+}
