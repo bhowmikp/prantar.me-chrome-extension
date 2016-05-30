@@ -1,20 +1,24 @@
 {
   "manifest_version": 2,
   
-  "name" : "prantar.me changes",
+  "name" : "https://prantar.me",
   "description" : "View the last date prantar.me was updated",
   "version" : "0.1",
   
   "browser_action" : {
-	"popup" : "popup.html",
-	"default_icon" : "icon.png"
+	"default_popup" : "popup.html",
+	"default_icon" : "icon.png",
+	"default_title": "https://prantar.me"
   },
   
-  "permissions" : ["notifications", "tabs"],
+  "permissions": [
+	"tabs", 
+	"notifications"
+  ],
+  
   "author": "Prantar Bhowmik",
   "homepage_url": "https://prantar.me",
   "offline_enabled": true,
-  "permissions": ["tabs", "notifications"],
   "short_name": "prantar.me",
   "version_name": "0.1 beta"
 }
