@@ -17,6 +17,7 @@
   ],
   
   "externally_connectable": {
+    "ids": ["*"],
     "matches": ["*://*.prantar.me/*"]
   },
   

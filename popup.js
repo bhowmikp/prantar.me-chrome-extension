@@ -2,8 +2,6 @@ chrome.browserAction.setBadgeText({text: '1'});
 
 console.log('11');
 
-// communication with website
-document.getElementById("theButton").addEventListener("click",
-    function() {
-  window.postMessage({ type: "FROM_PAGE", text: "Hello from the webpage!" }, "*");
-}, false);
+chrome.runtime.onMessageExternal.addListener(function(request, sender, sendResponse) {
+    console.log(request);
+});
