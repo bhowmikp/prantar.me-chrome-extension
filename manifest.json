@@ -3,7 +3,7 @@
   
   "name" : "https://prantar.me",
   "description" : "View the last date prantar.me was updated",
-  "version" : "0.0.0.1",
+  "version" : "0.0.0.3",
   
   "browser_action" : {
 	"default_popup" : "popup.html",
@@ -25,5 +25,5 @@
   "homepage_url": "https://prantar.me",
   "offline_enabled": true,
   "short_name": "prantar.me",
-  "version_name": "0.0.0.1 beta"
+  "version_name": "0.0.0.3 beta"
 }
