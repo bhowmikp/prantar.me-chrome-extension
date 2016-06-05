@@ -3,7 +3,7 @@
   
   "name" : "https://prantar.me",
   "description" : "View the last date prantar.me was updated",
-  "version" : "0.0.0.3",
+  "version" : "0.0.0.5",
   
   "browser_action" : {
 	"default_popup" : "popup.html",
@@ -13,17 +13,31 @@
   
   "permissions": [
 	"tabs", 
-	"notifications"
+	"notifications",
+	"https://ajax.googleapis.com/"
   ],
+  
+  "icons":{
+	"64" : "icon.png"
+  },
   
   "externally_connectable": {
     "ids": ["*"],
-    "matches": ["*://*.prantar.me/*"]
+    "matches": ["https://prantar.me/*"]
+  },
+  
+  "content_scripts": [{
+	"matches" : ["https://prantar.me/*"],
+	"js" : ["custom.js"]
+  }],
+  
+  "background" : {
+	"scripts" : ["background.js"]
   },
   
   "author": "Prantar Bhowmik",
   "homepage_url": "https://prantar.me",
-  "offline_enabled": true,
+  "offline_enabled": false,
   "short_name": "prantar.me",
-  "version_name": "0.0.0.3 beta"
+  "version_name": "0.0.0.5 beta"
 }
