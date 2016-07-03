@@ -14,7 +14,9 @@
   "permissions": [
 	"tabs", 
 	"notifications",
-	"https://ajax.googleapis.com/"
+	"storage",
+	"https://ajax.googleapis.com/",
+	"https://prantar.me/*"
   ],
   
   "icons":{
@@ -33,7 +35,7 @@
   }],
   
   "background" : {
-	"scripts" : ["background.js"]
+	"page" : "background.html"
   },
   
   "author": "Prantar Bhowmik",
