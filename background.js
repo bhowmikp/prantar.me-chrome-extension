@@ -1,7 +1,9 @@
 // does not run on page, but runs in an isolated environment. Not able to access DOM or any of its properties
 $(function(){
 	main();
-	setInterval(main, 20000);
+	// 1 sec = 1000
+	//refresh every 30 min
+	setInterval(main, 1800000);
 });
 
 var options = {
