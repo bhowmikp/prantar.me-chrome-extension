@@ -3,6 +3,7 @@ $(function(){
 	main();
 	// 1 sec = 1000
 	//refresh every 30 min
+	// 1800000 == 30 min
 	setInterval(main, 1800000);
 });
 
@@ -28,25 +29,27 @@ function main(){
 		currDate = $('body').find('#lastModified').text();
 		
 		// get prevDate
-		chrome.storage.sync.get('value', function(data){
-			prevDate = data.value;
+		chrome.storage.local.get('data', function (result) {
+			prevDate = (result.data);
+		
 			console.log("Cur val: " + currDate);
 			console.log("Prev val: " + prevDate);
-			//check if prevDate == currDate
-			var n = prevDate.localeCompare(currDate);
+			
 			// if they are not same set prevDate = currDate
-			if (n != 0){
-				chrome.storage.sync.set({
-					'value': currDate
-				});
+			if (currDate != prevDate){
 				prevDate = currDate;
+				
+				chrome.storage.local.set({'data': prevDate}, function (result) {});
+				
+				console.log("NEW Cur val: " + currDate);
+				console.log("NEW Prev val: " + prevDate);
+				
 				// if new version available inform user with badge notification
 				chrome.browserAction.setBadgeText ( { text: "1" } );
 				// create rich notifications
 				chrome.notifications.create(options);
 				chrome.notifications.onClicked.addListener(redirectWindow);
 			}
-		});
-		
+		});		
 	});
 };
